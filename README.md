@@ -1,3 +1,5 @@
 # ReisAppAgro
- Aplicativo de Gestão Rural  
- 
+ Aplicativo de Gestão Rural
+ React Native  
+ Nodejs  
+ Javascript
