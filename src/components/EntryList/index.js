@@ -3,17 +3,17 @@ import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 import EntryListItem from './EntryListItem';
 
-const EntryList = () => {
+const EntryList = ({entries}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Últimos Lançamentos</Text>
       <FlatList
-        data={[
-          {key: 'Compra de Bovinos: 20 cab'},
-          {key: 'Pagamento de Salários: R$ 8.000,00'},
-          {key: 'Mortes: 2 cab'},
-        ]}
-        renderItem={({item}) => <Text>{item.key}</Text>}
+        data={entries}
+        renderItem={({item}) => (
+          <Text>
+            - {item.description} - ${item.amount}
+          </Text>
+        )}
       />
     </View>
   );
