@@ -1,15 +1,16 @@
 import {Alert} from 'react-native';
 import {getRealm} from './Realm';
 
-export const saveEntry = async () => {
+export const saveEntry = async value => {
   const realm = await getRealm();
   let data = {};
+  const {amount} = value;
+
   try {
     realm.write(() => {
-      // eslint-disable-next-line no-const-assign
       data = {
         id: 'ABC',
-        amount: 12.4,
+        amount: amount,
         entryAt: new Date(),
         isInit: false,
       };
@@ -23,7 +24,7 @@ export const saveEntry = async () => {
       'saveEntry :: error on save object: ',
       JSON.stringify(this.data),
     );
-    Alert.alert("Erro ao salvar os dados delançamento.");
+    Alert.alert('Erro ao salvar os dados delançamento.');
   }
 
   return data;

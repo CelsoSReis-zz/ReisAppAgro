@@ -8,12 +8,6 @@ import EntryList from '../../components/EntryList';
 const Main = ({navigation}) => {
   const currentBalance = 2000;
 
-  // () => navigation.navigate('NewEntry')
-  const save = () => {
-    // eslint-disable-next-line no-undef
-    saveEntry();
-  };
-
   const entriesGrouped = [
     {key: '1', description: 'Rebanho', amount: 2000},
     {key: '2', description: 'Machos', amount: 5000},
@@ -29,7 +23,10 @@ const Main = ({navigation}) => {
   return (
     <View style={styles.container}>
       <BalancePanel currentBalance={currentBalance} />
-      <Button title="Adicionar" onPress={save} />
+      <Button
+        title="Adicionar"
+        onPress={() => navigation.navigate('NewEntry')}
+      />
       <EntrySummary entriesGrouped={entriesGrouped} />
       <EntryList entries={entries} />
     </View>
