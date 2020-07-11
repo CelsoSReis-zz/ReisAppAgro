@@ -1,12 +1,10 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, Button, StyleSheet} from 'react-native';
 
 import BalancePanelLabel from './BalancePanelLabel';
 import BalancePanelChart from './BalancePanelChart';
 
 const BalancePanel = ({currentBalance}) => {
-  const saldo = '2.100';
-
   return (
     <View style={styles.container}>
       <BalancePanelLabel currentBalance={currentBalance} />
@@ -17,7 +15,7 @@ const BalancePanel = ({currentBalance}) => {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
+    // flex: 1,
   },
 });
 

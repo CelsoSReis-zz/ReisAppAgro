@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Picker, Button} from 'react-native';
+import {View, Picker, Button} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
 import EntrySummary from '../../components/EntrySummary';
@@ -23,7 +23,7 @@ const Report = () => {
 
   return (
     <View>
-      <BalanceLabel currentBalance={currentBalance}/>
+      <BalanceLabel currentBalance={currentBalance} />
       <View>
         <Picker>
           <Picker.Item label="Todas Categorias" />
@@ -41,11 +41,5 @@ const Report = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    //flex: 1,
-  },
-});
 
 export default Report;

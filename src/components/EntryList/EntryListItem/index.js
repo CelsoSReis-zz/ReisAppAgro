@@ -3,16 +3,12 @@ import {View, Text, StyleSheet} from 'react-native';
 
 const EntryListItem = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Text>EntryListItem</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    //flex: 1,
-  },
-});
+const styles = StyleSheet.create({});
 
 export default EntryListItem;

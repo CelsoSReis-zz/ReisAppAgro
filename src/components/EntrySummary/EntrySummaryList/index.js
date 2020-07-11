@@ -3,12 +3,12 @@ import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 const EntrySummaryList = ({entriesGrouped}) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Sumário</Text>
+    <View>
+      <Text style={styles.title}>Categorias</Text>
       <FlatList
         data={entriesGrouped}
         renderItem={({item}) => (
-          <Text>
+          <Text style={styles.entry}>
             - {item.description} - ${item.amount}
           </Text>
         )}
@@ -19,7 +19,7 @@ const EntrySummaryList = ({entriesGrouped}) => {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
+    // flex: 1,
   },
   title: {
     fontSize: 22,

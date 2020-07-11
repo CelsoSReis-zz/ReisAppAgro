@@ -1,16 +1,31 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, StyleSheet} from 'react-native';
 
 import EntryListItem from './EntryListItem';
 
-const EntryList = ({entries}) => {
+import {getEntries} from '../../services/Entries';
+
+const EntryList = () => {
+  [entries, setEntries] = useState([]);
+
+  useEffect(() => {
+    async function loadEntries() {
+      const data = await getEntries();
+      setEntries(data);
+    }
+
+    loadEntries();
+
+    console.log('EntryList :: useEffect');
+  }, []);
+
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.title}>Últimos Lançamentos</Text>
       <FlatList
         data={entries}
         renderItem={({item}) => (
-          <Text>
+          <Text style={styles.entry}>
             - {item.description} - ${item.amount}
           </Text>
         )}
@@ -21,10 +36,10 @@ const EntryList = ({entries}) => {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
+    // flex: 1,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     marginTop: 10,
     marginBottom: 10,

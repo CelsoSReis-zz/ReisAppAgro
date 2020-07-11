@@ -1,25 +1,27 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, TextInput, Button} from 'react-native';
+import {View, TextInput, Button, StyleSheet} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
+
 import {saveEntry} from '../../services/Entries';
 
 const NewEntry = ({navigation}) => {
-  const currentBalance = 2000;
+  const currentBalance = 2065.35;
   const [amount, setAmount] = useState('0.00');
 
   const save = () => {
     const value = {
       amount: parseFloat(amount),
     };
-    // eslint-disable-next-line no-alert
-    alert(value);
+
+    console.log('NewEntry :: save ', value);
     saveEntry(value);
   };
 
   return (
     <View style={styles.container}>
       <BalanceLabel currentBalance={currentBalance} />
+
       <View>
         <TextInput
           style={styles.input}
@@ -30,6 +32,7 @@ const NewEntry = ({navigation}) => {
         <Button title="GPS" />
         <Button title="Camera" />
       </View>
+
       <View>
         <Button title="Adicionar" onPress={save} />
         <Button title="Cancelar" onPress={() => navigation.goBack()} />

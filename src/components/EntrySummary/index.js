@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import EntrySummaryList from './EntrySummaryList';
 import EntrySummaryChart from './EntrySummaryChart';
+import EntrySummaryList from './EntrySummaryList';
 
 const EntrySummary = ({entriesGrouped}) => {
   return (
@@ -15,7 +15,7 @@ const EntrySummary = ({entriesGrouped}) => {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: 1,
+    // flex: 1,
   },
 });
 
