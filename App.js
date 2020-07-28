@@ -1,15 +1,29 @@
 import React, {Component} from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 
-class App extends Component{
+class App extends Component {
   render() {
-    return(
+    return (
       <View style={styles.geral}>
         <View style={styles.tituloView}>
           <Text style={styles.titulo}>App Gestão Rural</Text>
         </View>
         <View style={styles.formView}>
-          <Text style={styles.form}>Form</Text>
+          <TextInput
+            style={styles.formUsuario}
+            placeholder="Usuário"
+            placeholderTextColor="#fff"
+          />
+          <TextInput
+            style={styles.formSenha}
+            placeholder="Senha"
+            placeholderTextColor="#fff"
+          />
+          <TouchableOpacity style={styles.botao}>
+            <View style={styles.areaBotao}>
+              <Text style={styles.textoBotao}>Entrar</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <View style={styles.rodapeView}>
           <Text style={styles.rodape}>Desenvolvido por Celso Reis</Text>
@@ -22,8 +36,11 @@ const styles = StyleSheet.create({
   geral: {
     flex: 1,
     backgroundColor: '#006400',
+    padding: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  tituloView:{
+  tituloView: {
     flex: 1,
   },
   titulo: {
@@ -31,13 +48,50 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     padding: 20,
-    textAlign: 'center',
   },
   formView: {
     flex: 1,
   },
+  formUsuario: {
+    borderWidth: 1,
+    borderColor: '#006400',
+    borderBottomColor: '#fff',
+    marginBottom: 30,
+    fontSize: 18,
+  },
+  formSenha: {
+    borderColor: '#006400',
+    borderBottomColor: '#fff',
+    borderWidth: 1,
+    marginBottom: 50,
+    fontSize: 18,
+  },
+  botao: {
+    width: 230,
+    height: 50,
+    borderWidth: 2,
+    borderColor: '#fff',
+    borderRadius: 25,
+    backgroundColor: '#fff',
+  },
+  areaBotao:{
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textoBotao: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#006400',
+  },
   rodapeView: {
     flex: 1,
+    justifyContent: 'flex-end',
+  },
+  rodape: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 export default App;
